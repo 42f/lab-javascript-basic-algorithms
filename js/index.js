@@ -85,3 +85,37 @@ do {
 } while (indexOfTarget !== -1)
 
 console.log(countOfTarget);
+
+
+function palindromChecker(phraseToCheck) {
+	const len = phraseToCheck.length;
+	let isPalindrom = true;
+
+	for (let i = 0, y = len - 1; i < len / 2 && y > len / 2; i++, y--) {
+
+		while (i < len / 2 && !isLetter(phraseToCheck[i])) {
+			i++;
+		}
+		while (y > len / 2 && !isLetter(phraseToCheck[y])) {
+			y--;
+		}
+		if (phraseToCheck[i].toLocaleLowerCase() !== phraseToCheck[y].toLocaleLowerCase()) {
+			isPalindrom = false;
+			break;
+		}
+	}
+	console.log(`${isPalindrom ? 'Here is a palindrome: ' : 'Not a palindrome... '}"${phraseToCheck}"`);
+}
+
+palindromChecker("A man, a plan, a canal, Panama!");
+palindromChecker("Amor, Roma");
+palindromChecker("race car");
+palindromChecker("stack cats");
+palindromChecker("step on no pets");
+palindromChecker("taco cat");
+palindromChecker("put it up");
+palindromChecker("Was it a car or a cat I saw?");
+palindromChecker("No 'x' in Nixon");
+palindromChecker("No '' in Nixon");
+palindromChecker("abc yxxcba");
+
