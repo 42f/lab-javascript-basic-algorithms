@@ -105,6 +105,7 @@ function isPalindrome(phraseToCheck) {
 		}
 	}
 	console.log(`${isPalindrom ? 'Here is a palindrome: ' : 'Not a palindrome... '}"${phraseToCheck}"`);
+	return isPalindrom;
 }
 
 isPalindrome("A man, a plan, a canal, Panama!");
